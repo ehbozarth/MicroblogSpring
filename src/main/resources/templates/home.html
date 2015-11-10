@@ -19,16 +19,26 @@
 Hello, {{.}}
 <br>
 <form action="add-message" method="post">
-    <input type="text" placeholder="Enter your message here please" name="message"/>
+    <input type="text" placeholder="Enter your message here please" name="text"/>
     <button type="submit">Add Message</button>
 </form>
 
 {{#messages}}
 Message ID : {{id}}<br>
-Message : {{text}} <form action = "delete-message" method="post" style="display:inline;">
+Message : {{text}}<br>
+<form action = "edit-message" method="post" style="display:inline;">
+    <input type="hidden" name="id" value="{{id}}">
+    <input type="text" placeholder="Enter new message here" name="text">
+    <br>
+    <button type="submit">Edit Message</button>
+</form>
+<br>
+<form action = "delete-message" method="post" style="display:inline;">
     <input type="hidden" name="id" value="{{id}}">
     <button type="submit">Delete Message</button>
+
 </form>
+<br>
 <br>
 {{/messages}}
 {{/username}}
