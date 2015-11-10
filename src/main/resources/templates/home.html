@@ -25,17 +25,13 @@ Hello, {{.}}
 
 {{#messages}}
 Message ID : {{id}}<br>
-Message : {{text}} <form action = "delete-message" method="post">
+Message : {{text}} <form action = "delete-message" method="post" style="display:inline;">
     <input type="hidden" name="id" value="{{id}}">
     <button type="submit">Delete Message</button>
 </form>
 <br>
 {{/messages}}
 {{/username}}
-
-
-
-
 
 
 </body>
