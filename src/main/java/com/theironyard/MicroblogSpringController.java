@@ -70,14 +70,14 @@ public class MicroblogSpringController {
 //    }
     @RequestMapping("delete-message")
     public String deleteMessage(Integer id){
-        Message tempMessage = messageRepo.findOne(id);
-        messageRepo.delete(tempMessage);
+        messageRepo.delete(id);
         return "redirect:/";
     }
 //    @RequestMapping("/delete-message")
 //    public String message(
 //            @RequestParam Integer id
 //    ){
+    //Only necessary because of the ArrayList
 //        messageArrayList.remove(id-1);
 //        int i = 1;
 //        for(Message tempMessage: messageArrayList){
